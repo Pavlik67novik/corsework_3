@@ -34,24 +34,51 @@ def format_card(card: str):
         number_secret = f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
     return f"{card_name} {number_secret}"
 
+#Все что ниже проверка кода
 
-#def get_data_format(data):
-#    """" Вот так показывали на консультации """
-#    operations = [] #пробежаться по списку добавить строки в нужном нам формате
-#    for operation in data:
-#        data = format_date(operations["data"])
 
-#        if "from" in operation:
+
+
+
+#Все что ниже бред (2)
+def get_data_format(data):
+    """" Вот так показывали на консультации """
+    operations = [] #пробежаться по списку добавить строки в нужном нам формате
+    #operachii = filter_data(last_five_operations(get_data),filter_data(get_data))
+    for operation in data:
+        if "from" in operation:
+            #operations.append(string)
+            data = format_date(operation["date"])
+            operation_a = operation["description"]
+            from_who = format_card(operation["from"])
+            to_who = format_card(operation["to"])
+            sum_trans = operation["operationAmount"]["amount"]
+            currency = operation["operationAmount"]["currency"]["name"]
+            print(f"{data} {operation_a}\n{from_who} --> {to_who}\n{sum_trans} {currency}")
+            return operations
+
+        else:
+            print("fatal error")
+    print(operations)
+
+
+#data = get_data()
+#print(data)
+#data = filter_data(data)
+#print(data)
+
+
+
+
+
+#print(get_data_format(get_data))
+        #if "from" in operation:
 #            operations.append(string)
 
 #            else:
 
 #        return operations
-#data = get_data_format(...)
-#for operation in data:
-    #print(data)
+#data = get_data_format(...)    это в мейне
+#for operation in data:         это в мейне
+    #print(data)                это в мейне
 
-def get_data_format(data):
-    #oper_data = get_data()
-    execluted_operation = last_five_operations(get_data)
-    for operation in execluted_operation:
