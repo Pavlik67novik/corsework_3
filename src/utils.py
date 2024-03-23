@@ -4,7 +4,8 @@ def get_data():
 
     """ Читаем файл данных"""
     with open("data/operations.json", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+        return data
 
 def filter_data(data):
     """Операции с значением ключа state - EXECUTED"""

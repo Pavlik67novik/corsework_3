@@ -1,7 +1,8 @@
-from src.utils import get_data, last_five_operations, get_data_format,filter_data
+from src.utils import get_data, filter_data,  last_five_operations, get_data_format
 
 
 #data = get_data()
+
 data = filter_data(get_data())
 print(data)
 data = last_five_operations(data)
