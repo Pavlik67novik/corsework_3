@@ -35,17 +35,23 @@ def format_card(card: str):
     return f"{card_name} {number_secret}"
 
 
+#def get_data_format(data):
+#    """" Вот так показывали на консультации """
+#    operations = [] #пробежаться по списку добавить строки в нужном нам формате
+#    for operation in data:
+#        data = format_date(operations["data"])
+
+#        if "from" in operation:
+#            operations.append(string)
+
+#            else:
+
+#        return operations
+#data = get_data_format(...)
+#for operation in data:
+    #print(data)
+
 def get_data_format(data):
-    operations = [] #пробежаться по списку добавить строик в нужном нам формате
-    for operation in data:
-        data = format_date(operations["data"])
-        if "from" in operation:
-
-            else:
-
-        return operations
-
-
-
-data = get_data_format(...)
-for operation in data
+    #oper_data = get_data()
+    execluted_operation = last_five_operations(get_data)
+    for operation in execluted_operation:
