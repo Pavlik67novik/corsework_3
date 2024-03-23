@@ -43,7 +43,8 @@ def format_card(card: str):
 #Все что ниже бред (2)
 def get_data_format(data):
     """"  """
-    operations = []
+    #operations = []
+
     for operation in data:
         if "from" in operation:
             #operations.append(string)
@@ -55,11 +56,12 @@ def get_data_format(data):
             currency = operation["operationAmount"]["currency"]["name"]
             #operations.append(str(date) + to_who + from_who + to_who + sum_trans + currency)
             print(f"{date} {operation_a}\n{from_who} --> {to_who}\n{sum_trans} {currency}")
-            return operations
+
+            #return operations
 
         else:
-            print("fatal error")
-    print("привет")
+            pass
+
 
 
 #data = get_data()
@@ -68,17 +70,4 @@ def get_data_format(data):
 #print(data)
 #get_data_format(data)
 
-
-
-
-#print(get_data_format(get_data))
-        #if "from" in operation:
-#            operations.append(string)
-
-#            else:
-
-#        return operations
-#data = get_data_format(...)    это в мейне
-#for operation in data:         это в мейне
-    #print(data)                это в мейне
 
