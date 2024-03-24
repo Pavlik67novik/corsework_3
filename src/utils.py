@@ -40,7 +40,7 @@ def format_card(card: str):
 
 #Все что ниже бред (2)
 def get_data_format(data):
-    """"  """
+    """"форматируем данные под нашу форму вывода  """
     #operations = []
 
     for operation in data:
