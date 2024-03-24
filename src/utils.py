@@ -7,16 +7,18 @@ def get_data():
         data = json.load(f)
         return data
 
-def filter_data(data):
-    """Операции с значением ключа state - EXECUTED"""
-    filter_operations = [operation for operation in data if "state" in operation and operation["state"] == "EXECUTED"]
-    return filter_operations
+#def filter_data(data):
+#    """Операции с значением ключа state - EXECUTED"""
+#    filter_operations = [operation for operation in data if "state" in operation and operation["state"] == "EXECUTED"]
+#    return filter_operations
 
 
 def last_five_operations(data):
     """Операция сортировки и вывода последних 5 операций"""
-    sorted_operations = sorted(data, key=lambda x: x["date"], reverse=True)
-    return sorted_operations[:5]
+    filter_operations = [operation for operation in data if "state" in operation and operation["state"] == "EXECUTED"] #объед две функции
+
+    sorted_operations = sorted(filter_operations, key=lambda x: x["date"], reverse=True)
+    return sorted_operations[:4]
 
 
 def format_date (date: str):
@@ -34,11 +36,6 @@ def format_card(card: str):
     else:
         number_secret = f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
     return f"{card_name} {number_secret}"
-
-#Все что ниже проверка кода
-
-
-
 
 
 #Все что ниже бред (2)

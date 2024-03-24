@@ -1,14 +1,20 @@
-from src.utils import get_data, filter_data,  last_five_operations, get_data_format
+from src.utils import get_data, last_five_operations, get_data_format
 
 
-#data = get_data()
+data = get_data()
+#print(data) для проверки
+data =last_five_operations(data)
+#print(last_five_operations(data)) для проверки
+get_data_format(data)
+print(get_data_format(data))
 
-data = filter_data(get_data())
-print(data)
-data = last_five_operations(data)
-print(data)
-data = get_data_format(data)
-print(data)
+
+#data = filter_data(get_data())
+#print(data)
+#data = last_five_operations(data)
+#print(data)
+#data = get_data_format()
+#print(data)
 #for operation in data:
     #print(data)
 
