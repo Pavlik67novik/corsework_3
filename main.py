@@ -4,9 +4,9 @@ from src.utils import get_data, last_five_operations, get_data_format
 data = get_data()
 #print(data) для проверки
 data =last_five_operations(data)
-#print(last_five_operations(data)) для проверки
+#print(last_five_operations(data)) #для проверки
 get_data_format(data)
-print(get_data_format(data))
+#print(get_data_format(data))
 
 
 #data = filter_data(get_data())
