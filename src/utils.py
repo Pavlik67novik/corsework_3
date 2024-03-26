@@ -18,7 +18,7 @@ def last_five_operations(data):
     filter_operations = [operation for operation in data if "state" in operation and operation["state"] == "EXECUTED"] #объед две функции
 
     sorted_operations = sorted(filter_operations, key=lambda x: x["date"], reverse=True)
-    return sorted_operations[:4]
+    return sorted_operations[:5]
 
 
 def format_date (date: str):
@@ -44,21 +44,24 @@ def get_data_format(data):
     #operations = []
 
     for operation in data:
+        #operations.append(string)
+        date = format_date(operation["date"])
+        operation_a = operation["description"]
+        #from_who = format_card(operation["from"])
+        to_who = format_card(operation["to"])
+        sum_trans = operation["operationAmount"]["amount"]
+        currency = operation["operationAmount"]["currency"]["name"]
         if "from" in operation:
-            #operations.append(string)
-            date = format_date(operation["date"])
-            operation_a = operation["description"]
             from_who = format_card(operation["from"])
-            to_who = format_card(operation["to"])
-            sum_trans = operation["operationAmount"]["amount"]
-            currency = operation["operationAmount"]["currency"]["name"]
-            #operations.append(str(date) + to_who + from_who + to_who + sum_trans + currency)
-            print(f"{date} {operation_a}\n{from_who} --> {to_who}\n{sum_trans} {currency}")
+        else:
+            from_who =""
+        #operations.append(str(date) + to_who + from_who + to_who + sum_trans + currency)
+        print(f"{date} {operation_a}\n{from_who} --> {to_who}\n{sum_trans} {currency}\n")
 
             #return operations
 
-        else:
-            pass
+        #else:
+        #    pass
 
 
 
